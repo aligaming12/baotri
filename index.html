@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALI STUDIO - Bảo Trì Hệ Thống</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Preload audio để tăng khả năng tự động phát -->
+    <link rel="preload" href="audio/background-music.mp3" as="audio">
+    <!-- Thêm meta tag để cho phép tự động phát media -->
+    <meta name="autoplay-policy" content="no-user-gesture-required">
+</head>
+<body>
+    <div id="preloader">
+        <div class="loader-text">ALI STUDIO</div>
+        <div class="loader-bar">
+            <div class="loader-progress"></div>
+        </div>
+        <div class="loader-subtext">Đang tải tài nguyên...</div>
+        <button id="enter-button" class="enter-btn hidden">Truy Cập</button>
+    </div>
+
+    <div class="container">
+        <div class="maintenance-box">
+            <h1>ALI STUDIO</h1>
+            <div class="divider"></div>
+            <h2>Hệ Thống Đang Bảo Trì</h2>
+            <p>Chúng tôi đang nâng cấp hệ thống để mang đến trải nghiệm tốt hơn cho bạn.</p>
+            <p>Xin vui lòng quay lại sau!</p>
+            
+            <div class="maintenance-time">
+                <p>Thời gian bảo trì dự kiến hoàn thành:</p>
+                <div class="time-range">
+                    <div class="time-block">
+                        <span id="end-time">26/06/2025 - 14:00</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact">
+                <p>Nếu cần hỗ trợ gấp, vui lòng liên hệ:</p>
+                <a href="mailto:support@alistudio.com">support@alistudio.com</a>
+            </div>
+
+            <!-- Chỉ báo mất kết nối hệ thống -->
+            <div id="system-status-indicator">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v2m0 4h.01"></path><path d="M2.45 14.5A10.5 10.5 0 0 1 12 5.5a10.5 10.5 0 0 1 9.55 9"></path><path d="M12 20.5a10.5 10.5 0 0 1-9.55-9"></path><circle cx="12" cy="12" r="10.5"></circle></svg>
+                <span>Mất kết nối hệ thống</span>
+            </div>
+        </div>
+    </div>
+    <div id="bg-container"></div>
+    
+    <!-- Nhạc nền ẩn, bắt đầu với chế độ tắt tiếng -->
+    <audio id="background-music" loop autoplay muted playsinline>
+        <source src="audio/background-music.mp3" type="audio/mp3">
+        Trình duyệt của bạn không hỗ trợ phát audio.
+    </audio>
+    
+    <script src="js/main.js"></script>
+</body>
+</html> 
